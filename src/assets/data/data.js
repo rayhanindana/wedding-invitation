@@ -3,7 +3,7 @@ export const data = {
         L: {
             id: 1,
             name: 'Muhammad Rayhan Lahdji',
-            child: '',
+            child: 'Putra pertama',
             father: 'Usamah Lahdji',
             mother: 'Krisnawati',
             image: './src/assets/images/cowo.png'
@@ -11,7 +11,7 @@ export const data = {
         P: {
             id: 2,
             name: 'Indana Fikrotun Najibah',
-            child: '',
+            child: 'Putri kedua',
             father: 'Abdilbar',
             mother: 'Karomatul Muhsinah',
             image: './src/assets/images/cewe.png'
