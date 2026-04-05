@@ -4,7 +4,7 @@ export const data = {
             id: 1,
             name: 'Muhammad Rayhan Lahdji',
             child: 'Putra pertama',
-            father: 'Usamah Lahdji',
+            father: 'Usamah Lahdji (alm.)',
             mother: 'Krisnawati',
             image: './src/assets/images/cowo.png'
         },
