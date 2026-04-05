@@ -48,3 +48,7 @@
     right: 8rem;
     top: 22rem;
 }
+
+.time div + p {
+    margin-top: 2rem;
+}
