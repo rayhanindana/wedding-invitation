@@ -41,12 +41,12 @@ export const data = {
                 finish: '15.00'
             }
         },
-        address: 'Sidodadi, Paiton, Probolinggo'
+        address: 'Jl. H. Mansur, Dusun Kalianyar I|Sidodadi, Paiton, Probolinggo'
     },
 
     link: {
         calendar: 'https://calendar.app.google/oSVLRMYC79GzuA4f9',
-        map: 'https://maps.app.goo.gl/CQLez57tg3ajRtkA7',
+        map: 'https://maps.app.goo.gl/5C1557Zpkkus3NPa8',
     },
 
     galeri: [
