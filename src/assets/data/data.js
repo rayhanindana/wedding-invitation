@@ -28,7 +28,7 @@ export const data = {
             day: 'Minggu',
             hours: {
                 start: '07.30',
-                finish: 'Selesai'
+                finish: 'selesai'
             }
         },
         reception: {
@@ -38,7 +38,7 @@ export const data = {
             day: 'Minggu',
             hours: {
                 start: '13.00',
-                finish: 'Selesai'
+                finish: 'selesai'
             }
         },
         address: 'Sidodadi, Paiton, Probolinggo'
