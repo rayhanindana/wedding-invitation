@@ -25,20 +25,20 @@ export const data = {
             year: '2026',
             month: 'Mei',
             date: '31',
-            day: 'Minggu',
+            day: 'Ahad',
             hours: {
                 start: '07.30',
-                finish: 'selesai'
+                // finish: 'selesai'
             }
         },
         reception: {
             year: '2026',
             month: 'Mei',
             date: '31',
-            day: 'Minggu',
+            day: 'Ahad',
             hours: {
-                start: '13.00',
-                finish: 'selesai'
+                start: '10.00',
+                finish: '15.00'
             }
         },
         address: 'Sidodadi, Paiton, Probolinggo'
