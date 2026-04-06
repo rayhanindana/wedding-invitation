@@ -6,7 +6,8 @@
     position: relative;
 }
 
-.bride h2 {
+.bride h2,
+.hadist h3 {
     font-size: 1.6rem;
     font-family: var(--arabic);
     font-weight: 400;
