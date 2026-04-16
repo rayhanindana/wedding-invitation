@@ -7,7 +7,7 @@ import {
     renderElement
 } from "../utils/helper.js";
 import {data} from "../assets/data/data.js";
-import {commentService} from "../services/comentarService.js";
+import {commentService} from "../services/commentService.js";
 
 export const wishas = () => {
     const wishasContainer = document.querySelector('.wishas');
