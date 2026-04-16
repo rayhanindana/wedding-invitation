@@ -176,6 +176,6 @@ export const wishas = () => {
         }
     });
 
-    initialComentar().then();
-    initialBank();
+    initialComments().then();
+    // initialBank();
 };
