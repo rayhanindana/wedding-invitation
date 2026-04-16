@@ -110,12 +110,12 @@ export const data = {
             icon: 'bx bxs-calendar-check',
             path: '#time',
         },
-        {
-            id: 4,
-            teks: 'Galeri',
-            icon: 'bx bxs-photo-album',
-            path: '#galeri',
-        },
+        // {
+        //     id: 4,
+        //     teks: 'Galeri',
+        //     icon: 'bx bxs-photo-album',
+        //     path: '#galeri',
+        // },
         {
             id: 5,
             teks: 'Ucapan',
