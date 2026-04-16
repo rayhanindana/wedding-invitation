@@ -7,12 +7,12 @@ import {
     renderElement
 } from "../utils/helper.js";
 import {data} from "../assets/data/data.js";
-import {comentarService} from "../services/comentarService.js";
+import {commentService} from "../services/comentarService.js";
 
 export const wishas = () => {
     const wishasContainer = document.querySelector('.wishas');
     const [_, form] = wishasContainer.children[2].children;
-    const [peopleComentar, ___, containerComentar] = wishasContainer.children[3].children;
+    const [peopleComments, ___, containerComments] = wishasContainer.children[3].children;
     const buttonForm = form.children[6];
     const pageNumber = wishasContainer.querySelector('.page-number');
     const [prevButton, nextButton] = wishasContainer.querySelectorAll('.button-grup button');
@@ -48,7 +48,7 @@ export const wishas = () => {
         });
     };
 
-    const listItemComentar = (data) => {
+    const listItemComments = (data) => {
         const name = formattedName(data.name);
         const newDate = formattedDate(data.date);
         let date = "";
@@ -73,28 +73,28 @@ export const wishas = () => {
                  </li>`;
     };
 
-    let lengthComentar;
+    let nComments;
 
-    const initialComentar = async () => {
-        containerComentar.innerHTML = `<h1 style="font-size: 1rem; margin: auto">Loading...</h1>`;
-        peopleComentar.textContent = '...';
+    const initialComments = async () => {
+        containerComments.innerHTML = `<h1 style="font-size: 1rem; margin: auto">Loading...</h1>`;
+        peopleComments.textContent = '...';
         pageNumber.textContent = '..';
 
         try {
-            const response = await comentarService.getComentar();
-            const {comentar} = response;
+            const response = await commentService.getComments();
+            const {comments} = response;
 
-            lengthComentar = comentar.length;
-            comentar.reverse();
+            nComments = comments.length;
+            comments.reverse();
 
-            if (comentar.length > 0) {
-                peopleComentar.textContent = `${comentar.length} Orang telah mengucapkan`;
+            if (comments.length > 0) {
+                peopleComments.textContent = `${comments.length} Orang telah mengucapkan`;
             } else {
-                peopleComentar.textContent = `Belum ada yang mengucapkan`;
+                peopleComments.textContent = `Belum ada yang mengucapkan`;
             }
 
             pageNumber.textContent = '1';
-            renderElement(comentar.slice(startIndex, endIndex), containerComentar, listItemComentar);
+            renderElement(comments.slice(startIndex, endIndex), containerComments, listItemComments);
         } catch (error) {
             return `Error : ${error.message}`;
         }
@@ -104,7 +104,7 @@ export const wishas = () => {
         e.preventDefault();
         buttonForm.textContent = 'Loading...';
 
-        const comentar = {
+        const comment = {
             id: generateRandomId(),
             name: e.target.name.value,
             status: e.target.status.value === 'y' ? 'Hadir' : 'Tidak Hadir',
@@ -114,14 +114,14 @@ export const wishas = () => {
         };
 
         try {
-            const response = await comentarService.getComentar();
+            const response = await commentService.getComments();
 
-            await comentarService.addComentar(comentar);
+            await commentService.addComment(comment);
 
-            lengthComentar = response.comentar.length;
+            nComment = response.comments.length;
 
-            peopleComentar.textContent = `${++response.comentar.length} Orang telah mengucapkan`;
-            containerComentar.insertAdjacentHTML('afterbegin', listItemComentar(comentar));
+            peopleComments.textContent = `${++response.comments.length} Orang telah mengucapkan`;
+            containerComments.insertAdjacentHTML('afterbegin', listItemComments(comment));
         } catch (error) {
             return `Error : ${error.message}`;
         } finally {
@@ -137,18 +137,18 @@ export const wishas = () => {
     let endIndex = itemsPerPage;
 
     const updatePageContent = async () => {
-        containerComentar.innerHTML = '<h1 style="font-size: 1rem; margin: auto">Loading...</h1>';
+        containerComments.innerHTML = '<h1 style="font-size: 1rem; margin: auto">Loading...</h1>';
         pageNumber.textContent = '..';
         prevButton.disabled = true;
         nextButton.disabled = true;
 
         try {
-            const response = await comentarService.getComentar();
-            const {comentar} = response;
+            const response = await commentService.getComments();
+            const {comments} = response;
 
-            comentar.reverse();
+            comments.reverse();
 
-            renderElement(comentar.slice(startIndex, endIndex), containerComentar, listItemComentar);
+            renderElement(comments.slice(startIndex, endIndex), containerComments, listItemComments);
             pageNumber.textContent = currentPage.toString();
         } catch (error) {
             console.log(error);
@@ -159,7 +159,7 @@ export const wishas = () => {
     }
 
     nextButton.addEventListener('click', async () => {
-        if (endIndex <= lengthComentar) {
+        if (endIndex <= nComments) {
             currentPage++;
             startIndex = (currentPage - 1) * itemsPerPage;
             endIndex = startIndex + itemsPerPage;
