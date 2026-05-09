@@ -13,7 +13,7 @@ export const time = () => {
          Pukul ${details.hours.start}${details.hours.finish ? ` sd ${details.hours.finish}`: ''} WIB</p>`
     );
 
-    if(getType() === 'fa') {
+    if(getType() === 'ar') {
         marriageDiv.style.display = "none";
     }
 
