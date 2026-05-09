@@ -96,6 +96,6 @@ export const getQueryParameter = (parameterName) => {
 
 export const getType = () => {
     const url = URL.parse(window.location.href)
-    const type = url.pathname.split('/')[2]
+    const type = url.pathname.split('/').filter(x => x).pop().slice(0, 2)
     return type
 }
