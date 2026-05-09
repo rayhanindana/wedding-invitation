@@ -88,6 +88,7 @@ export const data = {
     ],
 
     audio: './src/assets/audio/wedding.mp3',
+    getAudioAddress: (type) => `./src/assets/audio/${type}.mp3`,
 
     api: 'https://script.google.com/macros/s/AKfycbwDamk6T1IL4D0Gs9WA_WWbBf1TxclCXmwN_9FrZ6QcKygYEw1tIs6UzahMQvvnE0I7Xw/exec',
 

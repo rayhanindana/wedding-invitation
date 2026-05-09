@@ -1,5 +1,5 @@
 import {data} from "../assets/data/data.js";
-import {addClassElement, getQueryParameter, removeClassElement} from "../utils/helper.js";
+import {addClassElement, getQueryParameter, removeClassElement, getType} from "../utils/helper.js";
 
 export const welcome = () => {
     const welcomeElement = document.querySelector('.welcome');
@@ -34,7 +34,7 @@ export const welcome = () => {
     const initialAudio = () => {
         let isPlaying = false;
 
-        audioMusic.innerHTML = `<source src=${data.audio} type="audio/mp3"/>`;
+        audioMusic.innerHTML = `<source src=${data.getAudioAddress(getType())} type="audio/mp3"/>`;
 
         audioButton.addEventListener('click', () => {
 

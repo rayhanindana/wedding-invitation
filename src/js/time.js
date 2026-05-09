@@ -12,6 +12,10 @@ export const time = () => {
          Pukul ${details.hours.start}${details.hours.finish ? ` sd ${details.hours.finish}`: ''} WIB</p>`
     );
 
+    if(getType() === 'fa') {
+        marriageDiv.style.display = "none";
+    }
+
     marriageDiv.innerHTML = createTimeListItem('Akad', data.time.marriage);
     receptionDiv.innerHTML = createTimeListItem('Resepsi', data.time.reception);
 

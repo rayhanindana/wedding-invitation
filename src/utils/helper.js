@@ -93,3 +93,9 @@ export const getQueryParameter = (parameterName) => {
     const urlParams = new URLSearchParams(queryString);
     return urlParams.get(parameterName);
 }
+
+export const getType = () => {
+    const url = URL.parse(window.location.href)
+    const type = url.pathname.split('/')[2]
+    return type
+}
